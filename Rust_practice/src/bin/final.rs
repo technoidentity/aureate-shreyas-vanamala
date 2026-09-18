@@ -1,32 +1,17 @@
-fn main() {
-    //let x = 6;
-    //let y = 3;
-
-    /*let first = String::from("hello");
-    let second = first.clone();
-    println!("{}", second);
-    println!("{}", first); */
-
-    // use x and y so they're not unused
-    //println!("sum: {}", x + y);
-
-    /*let first = String::from("hello");
-    let second = first.clone(); // creates a separate heap copy
-    println!("first = {first}, second = {second}");
-*/
-enum colour{
+enum Colour {
     Red,
-    Green,
     Blue,
-    Violet
+    Violet,
 }
 
-let green = colour::Green;
-let blue = colour::Blue;
-let red = colour::Red;
-let violet = colour::Violet;
-
+fn describe(colour: Colour) {
+    match colour {
+        Colour::Red => println!("The colour is red"),
+        Colour::Blue => println!("The colour is blue"),
+        Colour::Violet => println!("The colour is violet"),
+    }
 }
 
-
-
+fn main() {
+    describe(Colour::Blue);
+}

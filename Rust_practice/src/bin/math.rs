@@ -79,17 +79,11 @@ fn variable(){
     /*let scale = 2;
     let width = dbg!(30 * scale); */
 
-/* #[derive(Debug)]
-
+/*#[derive(Debug)]
 struct Rectangle {
-
 width: u32,
-
 height: u32,
-
 }
-
-
 fn main() {
     let rect1 = Rectangle {
 
@@ -97,8 +91,6 @@ fn main() {
 
     height: 50,
 };
-
-
 let a = area(rect1);{
 
   println!("{} * {} = {}", rect1.width, rect1.height, a);
@@ -176,5 +168,4 @@ fn return_message(text: String) -> String {
     println!("{second}");
 }
 
-
-
+}

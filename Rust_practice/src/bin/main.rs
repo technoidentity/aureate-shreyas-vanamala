@@ -60,7 +60,6 @@ fn describe(value: Option<i32>) {
         println!("No number was provided");
         return;
     };
-
     println!("The number is {number}");
 }
 

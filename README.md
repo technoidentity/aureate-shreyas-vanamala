@@ -1,4 +1,12 @@
 # aureate
+# Shreyas — Rust Learning and Practice
+
+Welcome to my learning branch.
+
+- [Rust practice guide](Rust_practice/README.md)
+- [Practice programs](Rust_practice/Rust_Programs/src/bin/)
+- [Earlier Rust examples](Rust_practice/src/bin/)
+- [Rust learning notes](Rust_practice/Rust_Programming.docx)
 
 
 

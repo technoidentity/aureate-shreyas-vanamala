@@ -1,0 +1,5 @@
+# Rust build artifacts (created by cargo build/run/check)
+target/
+
+# Locally compiled executable created outside Cargo
+/main

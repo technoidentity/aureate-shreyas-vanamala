@@ -5,6 +5,13 @@ on:
     branches: [Shreyas]
   workflow_dispatch:
 
+name: Snakes and Ladders CI
+
+on:
+  push:
+    branches: [Shreyas]
+  workflow_dispatch:
+
 permissions:
   contents: read
 
@@ -18,10 +25,12 @@ jobs:
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt
 
-      - name: Build game
+      - name: Check formatting
         working-directory: Rust_practice/Rust_Programs/snakes_and_ladders
-        run: cargo build --locked
+        run: cargo fmt --check
 
       - name: Build game
         working-directory: Rust_practice/Rust_Programs/snakes_and_ladders
@@ -30,4 +39,3 @@ jobs:
       - name: Run tests
         working-directory: Rust_practice/Rust_Programs/snakes_and_ladders
         run: cargo test --locked
-

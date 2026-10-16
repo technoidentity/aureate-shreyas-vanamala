@@ -1,0 +1,24 @@
+name: Snakes and Ladders CI
+
+on:
+  push:
+    branches: [Shreyas]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build game
+        working-directory: Rust_practice/Rust_Programs/snakes_and_ladders
+        run: cargo build --locked

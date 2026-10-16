@@ -560,3 +560,22 @@ fn draw_wrapped_text(text: &str, x: f32, mut y: f32, width: f32, size: u16, colo
         draw_text(&line, x, y, size as f32, color);
     }
 }
+#[cfg(test)]
+mod tests {
+    use super::check_snake_or_ladder;
+
+    #[test]
+    fn ladder_moves_player_up() {
+        assert_eq!(check_snake_or_ladder(4), 14);
+    }
+
+    #[test]
+    fn snake_moves_player_down() {
+        assert_eq!(check_snake_or_ladder(17), 7);
+    }
+
+    #[test]
+    fn ordinary_square_keeps_position() {
+        assert_eq!(check_snake_or_ladder(2), 2);
+    }
+}

@@ -24,7 +24,7 @@ struct Player {
 }
 
 fn main() {
-    println!("       SNAKE AND LADDERS GAME");
+    println!("SNAKE AND LADDERS GAME");
     println!("Reach square 100 first. You need an exact roll to win.\n");
 
     // Both players start at position 0, meaning they are outside the board.

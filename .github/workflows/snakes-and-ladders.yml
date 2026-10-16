@@ -25,10 +25,18 @@ jobs:
         working-directory: Rust_practice/Rust_Programs/snakes_and_ladders
         run: cargo fmt --check
 
-      - name: Build game
+      - name: Build release game
         working-directory: Rust_practice/Rust_Programs/snakes_and_ladders
-        run: cargo build --locked
+        run: cargo build --release --locked
 
       - name: Run tests
         working-directory: Rust_practice/Rust_Programs/snakes_and_ladders
         run: cargo test --locked
+
+      - name: Upload game artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: snakes-and-ladders-linux
+          path: Rust_practice/Rust_Programs/snakes_and_ladders/target/release/snake_and_ladders_graphical
+          if-no-files-found: error
+          retention-days: 7

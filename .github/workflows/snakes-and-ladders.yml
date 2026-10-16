@@ -1,0 +1,44 @@
+name: Snakes and Ladders CI
+
+on:
+  push:
+    branches: [Shreyas]
+  pull_request:
+     branches: [Shreyas]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt
+
+      - name: Check formatting
+        working-directory: Rust_practice/Rust_Programs/snakes_and_ladders
+        run: cargo fmt --check
+
+      - name: Build release game
+        working-directory: Rust_practice/Rust_Programs/snakes_and_ladders
+        run: cargo build --release --locked
+
+      - name: Run tests
+        working-directory: Rust_practice/Rust_Programs/snakes_and_ladders
+        run: cargo test --locked
+
+      - name: Upload game artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: snakes-and-ladders-linux
+          path: Rust_practice/Rust_Programs/snakes_and_ladders/target/release/snake_and_ladders_graphical
+          if-no-files-found: error
+          retention-days: 7

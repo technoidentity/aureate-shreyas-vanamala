@@ -22,3 +22,12 @@ jobs:
       - name: Build game
         working-directory: Rust_practice/Rust_Programs/snakes_and_ladders
         run: cargo build --locked
+
+      - name: Build game
+        working-directory: Rust_practice/Rust_Programs/snakes_and_ladders
+        run: cargo build --locked
+
+      - name: Run tests
+        working-directory: Rust_practice/Rust_Programs/snakes_and_ladders
+        run: cargo test --locked
+

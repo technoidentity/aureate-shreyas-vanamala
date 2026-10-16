@@ -5,13 +5,6 @@ on:
     branches: [Shreyas]
   workflow_dispatch:
 
-name: Snakes and Ladders CI
-
-on:
-  push:
-    branches: [Shreyas]
-  workflow_dispatch:
-
 permissions:
   contents: read
 

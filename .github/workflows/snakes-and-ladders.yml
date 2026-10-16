@@ -3,6 +3,8 @@ name: Snakes and Ladders CI
 on:
   push:
     branches: [Shreyas]
+  pull_request:
+     branches: [Shreyas]
   workflow_dispatch:
 
 permissions:

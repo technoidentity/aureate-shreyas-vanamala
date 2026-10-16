@@ -5,7 +5,7 @@ A separate graphical version of Snake and Ladders built with Rust and Macroquad.
 ## Run on NixOS
 
 ```bash
-cd snake_and_ladders_graphical
+cd snakes_and_ladders
 nix-shell
 cargo run
 ```

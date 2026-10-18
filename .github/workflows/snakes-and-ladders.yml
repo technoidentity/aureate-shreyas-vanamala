@@ -4,13 +4,32 @@ on:
   push:
     branches: [Shreyas]
   pull_request:
-     branches: [Shreyas]
+    branches: [Shreyas, develop]
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
+  check-packages:
+    name: Check ${{ matrix.manifest }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        manifest:
+          - hallo_cargo/Cargo.toml
+          - Rust_practice/Cargo.toml
+          - Rust_practice/Rust_Programs/Cargo.toml
+          - Rust_practice/Rust_Programs/snakes_and_ladders/Cargo.toml
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v4
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+      - name: Check all package targets
+        run: cargo check --locked --all-targets --manifest-path "${{ matrix.manifest }}"
+
   build:
     runs-on: ubuntu-latest
 
